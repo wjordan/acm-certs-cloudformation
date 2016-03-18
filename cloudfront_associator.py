@@ -10,7 +10,7 @@ log = logging.getLogger()
 log.setLevel(logging.DEBUG)
 
 cloudfront = boto3.client('cloudfront')
-acm = boto3.client('acm')
+acm = boto3.client('acm', region_name='us-east-1')
 
 def check_properties(event):
     properties = event['ResourceProperties']
